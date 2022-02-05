@@ -1,0 +1,7 @@
+numpy~=1.18.5
+torch~=1.7.0
+ray~=1.5.2
+SMAC~=1.0.0
+wandb~=0.10.21
+argparse~=1.4.0
+flatland-rl~=2.2.2
