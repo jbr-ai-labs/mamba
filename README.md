@@ -39,3 +39,21 @@ The original code for the environment can be found at
   - ```workers``` contains logic for interacting with environment
 - ```env``` contains environment logic
 - ```networks``` contains neural network architectures
+
+
+## Citation
+
+    @inproceedings{10.5555/3535850.3535894,
+          author = {Egorov, Vladimir and Shpilman, Alexei},
+          title = {Scalable Multi-Agent Model-Based Reinforcement Learning},
+          year = {2022},
+          isbn = {9781450392136},
+          publisher = {International Foundation for Autonomous Agents and Multiagent Systems},
+          address = {Richland, SC},
+          booktitle = {Proceedings of the 21st International Conference on Autonomous Agents and Multiagent Systems},
+          pages = {381–390},
+          numpages = {10},
+          keywords = {communication, multi-agent reinforcement learning, model-based reinforcement learning},
+          location = {Virtual Event, New Zealand},
+          series = {AAMAS '22}
+    }
