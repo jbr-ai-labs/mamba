@@ -1,5 +1,5 @@
 # MAMBA
-This code accompanies the paper "Scalable Multi-Agent Model-Based Reinforcement Learning".
+This code accompanies the paper "[Scalable Multi-Agent Model-Based Reinforcement Learning](https://arxiv.org/abs/2205.15023)".
 
 The repository contains MAMBA implementation as well as fine-tuned hyperparameters in ```configs/dreamer/optimal``` folder.
 
