@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 240 240" style="enable-background:new 0 0 240 240;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#978679;}
+	.st1{fill:#3D3D3D;}
+	.st2{fill:none;}
+</style>
+<g>
+	<rect x="69.5" y="210" class="st0" width="100" height="20"/>
+	<rect x="69.5" y="10" class="st0" width="100" height="20"/>
+	<rect x="69.5" y="50" class="st0" width="100" height="20"/>
+	<rect x="69.5" y="90" class="st0" width="100" height="20"/>
+	<rect x="69.5" y="130" class="st0" width="100" height="20"/>
+	<rect x="69.5" y="170" class="st0" width="100" height="20"/>
+</g>
+<g>
+	<rect x="69.5" y="9.5" class="st0" width="100" height="20"/>
+	<rect x="210" y="70" class="st0" width="20" height="100"/>
+	<polygon class="st0" points="81.34,58.76 87.45,77.8 177.54,48.88 108.02,108.43 121.03,123.62 190.57,64.06 152.04,147.26 
+		170.19,155.67 212.21,64.92 195.99,57.41 183.97,43.38 181.97,45.09 176.55,28.2 	"/>
+</g>
+<g>
+	<path class="st1" d="M151,0.5c0,48.8,39.7,88.5,88.5,88.5c0.17,0,0.33-0.01,0.5-0.01V78.99c-0.17,0-0.33,0.01-0.5,0.01
+		C196.21,79,161,43.79,161,0.5c0-0.17,0.01-0.33,0.01-0.5l-10.01,0C151.01,0.17,151,0.33,151,0.5z"/>
+	<path class="st1" d="M240,161v-10C156.74,151,89,83.26,89,0L79,0C79,88.78,151.22,161,240,161z"/>
+</g>
+<g>
+	<rect x="150.51" y="0" class="st1" width="9.98" height="240"/>
+	<rect x="78.51" y="0" class="st1" width="9.98" height="240"/>
+</g>
+<g>
+	<rect x="0" class="st2" width="240" height="240"/>
+</g>
+</svg>
