@@ -3,6 +3,21 @@ This code accompanies the paper "[Scalable Multi-Agent Model-Based Reinforcement
 
 The repository contains MAMBA implementation as well as fine-tuned hyperparameters in ```configs/dreamer/optimal``` folder.
 
+## Installation
+
+`python3.7` is required
+
+```
+pip install wheel
+pip install flatland-2.2.2/
+pip install -r requirements.txt 
+```
+
+Installing Starcraft:
+
+https://github.com/oxwhirl/smac#installing-starcraft-ii
+
+
 ## Usage
 
 ```
