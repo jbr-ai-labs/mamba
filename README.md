@@ -26,6 +26,8 @@ python3 train.py --n_workers 2 --env flatland --env_type 5_agents
 
 Two environments are supported for env flag: flatland and starcraft.
 
+### Optimal parameters
+To train agents with optimal parameters from the paper they should be copied from `configs/dreamer/optimal/` folder to [DreamerAgentConfig.py](https://github.com/jbr-ai-labs/mamba/blob/main/configs/dreamer/DreamerAgentConfig.py) and [DreamerLearnerConfig.py](https://github.com/jbr-ai-labs/mamba/blob/main/configs/dreamer/DreamerLearnerConfig.py)
 
 ## SMAC
 
