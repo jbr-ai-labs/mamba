@@ -67,7 +67,7 @@ def critic_rollout(model, critic, states, rew_states, actions, raw_states, confi
     with FreezeParameters([model, critic]):
         imag_reward = calculate_next_reward(model, actions, raw_states)
         imag_reward = imag_reward.reshape(actions.shape[:-1]).unsqueeze(-1).mean(-2, keepdim=True)[:-1]
-        value = critic(states, actions)
+        value = critic(states)
         discount_arr = model.pcont(rew_states).mean
         wandb.log({'Value/Max reward': imag_reward.max(), 'Value/Min reward': imag_reward.min(),
                    'Value/Reward': imag_reward.mean(), 'Value/Discount': discount_arr.mean(),
@@ -104,7 +104,7 @@ def actor_loss(imag_states, actions, av_actions, old_policy, advantage, actor, e
     return (ppo_loss + ent_loss.unsqueeze(-1) * ent_weight).mean()
 
 
-def value_loss(critic, actions, imag_feat, targets):
-    value_pred = critic(imag_feat, actions)
+def value_loss(critic, imag_feat, targets):
+    value_pred = critic(imag_feat)
     mse_loss = (targets - value_pred) ** 2 / 2.0
     return torch.mean(mse_loss)

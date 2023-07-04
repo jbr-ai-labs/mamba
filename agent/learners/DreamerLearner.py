@@ -11,7 +11,7 @@ from agent.optim.loss import model_loss, actor_loss, value_loss, actor_rollout
 from agent.optim.utils import advantage
 from environments import Env
 from networks.dreamer.action import Actor
-from networks.dreamer.critic import MADDPGCritic
+from networks.dreamer.critic import AugmentedCritic
 
 
 def orthogonal_init(tensor, gain=1):
@@ -53,7 +53,7 @@ class DreamerLearner:
         self.model = DreamerModel(config).to(config.DEVICE).eval()
         self.actor = Actor(config.FEAT, config.ACTION_SIZE, config.ACTION_HIDDEN, config.ACTION_LAYERS).to(
             config.DEVICE)
-        self.critic = MADDPGCritic(config.FEAT, config.HIDDEN).to(config.DEVICE)
+        self.critic = AugmentedCritic(config.FEAT, config.HIDDEN).to(config.DEVICE)
         initialize_weights(self.model, mode='xavier')
         initialize_weights(self.actor)
         initialize_weights(self.critic, mode='xavier')
@@ -123,7 +123,7 @@ class DreamerLearner:
                                                                             self.critic if self.config.ENV_TYPE == Env.STARCRAFT
                                                                             else self.old_critic,
                                                                             self.config)
-        adv = returns.detach() - self.critic(imag_feat, actions).detach()
+        adv = returns.detach() - self.critic(imag_feat).detach()
         if self.config.ENV_TYPE == Env.STARCRAFT:
             adv = advantage(adv)
         wandb.log({'Agent/Returns': returns.mean()})
@@ -137,7 +137,7 @@ class DreamerLearner:
                                   old_policy[idx], adv[idx], self.actor, self.entropy)
                 self.apply_optimizer(self.actor_optimizer, self.actor, loss, self.config.GRAD_CLIP_POLICY)
                 self.entropy *= self.config.ENTROPY_ANNEALING
-                val_loss = value_loss(self.critic, actions[idx], imag_feat[idx], returns[idx])
+                val_loss = value_loss(self.critic, imag_feat[idx], returns[idx])
                 if np.random.randint(20) == 9:
                     wandb.log({'Agent/val_loss': val_loss, 'Agent/actor_loss': loss})
                 self.apply_optimizer(self.critic_optimizer, self.critic, val_loss, self.config.GRAD_CLIP_POLICY)

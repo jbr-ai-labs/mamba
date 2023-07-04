@@ -13,11 +13,11 @@ class Critic(nn.Module):
         self.activation = activation
         self.feedforward_model = build_model(in_dim, 1, layers, hidden_size, activation)
 
-    def forward(self, state_features, actions):
+    def forward(self, state_features):
         return self.feedforward_model(state_features)
 
 
-class MADDPGCritic(nn.Module):
+class AugmentedCritic(nn.Module):
     def __init__(self, in_dim, hidden_size, activation=nn.ReLU):
         super().__init__()
         self.feedforward_model = build_model(hidden_size, 1, 1, hidden_size, activation)
@@ -25,7 +25,7 @@ class MADDPGCritic(nn.Module):
         self.embed = nn.Linear(in_dim, hidden_size)
         self.prior = build_model(in_dim, 1, 3, hidden_size, activation)
 
-    def forward(self, state_features, actions):
+    def forward(self, state_features):
         n_agents = state_features.shape[-2]
         batch_size = state_features.shape[:-2]
         embeds = F.relu(self.embed(state_features))
