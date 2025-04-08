@@ -46,6 +46,9 @@ class GreedyFlatland():
     def render(self):
         self.env.render()
 
+    def close(self):
+        pass
+
     def get_steps(self):
         return self.env.get_steps()
 
