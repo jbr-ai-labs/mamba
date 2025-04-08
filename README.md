@@ -21,7 +21,7 @@ https://github.com/oxwhirl/smac#installing-starcraft-ii
 ## Usage
 
 ```
-python3 train.py --n_workers 2 --env flatland --env_type 5_agents
+python3 train.py --n_workers 2 --env flatland --env_name 5_agents
 ```
 
 Two environments are supported for env flag: flatland and starcraft.
